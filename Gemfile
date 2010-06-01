@@ -1,8 +1,9 @@
 source :gemcutter
 
-gem 'devise', '= 1.0.7'
+gem 'devise', '1.0.7'
 gem 'factory_girl', '1.2.3'
-gem 'haml', '~> 3.0.4'
+gem 'haml', '3.0.7'
+gem 'mongrel'
 gem 'rails', '2.3.5'
 gem 'sqlite3-ruby'
 
