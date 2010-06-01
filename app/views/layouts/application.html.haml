@@ -1,18 +1,21 @@
-!!!
-%html{html_attrs}
+%html{:xmlns => 'http://www.w3.org/1999/xhtml', 'xmlns:fb' => 'http://www.facebook.com/2008/fbml'}
   %head
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}
     %meta{'http-equiv' => 'Content-Script-Type', :content => 'text/javascript'}
-    - if protect_against_forgery?
-      %meta{:name => 'authenticity_token', :content => form_authenticity_token}
-    %title= h(@title || "University-bookstore")
-    = stylesheet_link_tag 'blueprint/screen', :media => 'screen, projection'
-    = stylesheet_link_tag 'blueprint/print', :media => 'print'
-    /[if IE]
-      = stylesheet_link_tag 'blueprint/ie', :media => 'screen, projection'
-    = javascript_include_tag 'jquery'
-    = javascript_include_tag 'application'
-    = yield :head
+
+    %title Crimson Crisp
+    = stylesheet_link_tag 'whitespace-reset'
+    = stylesheet_link_tag 'application'
+
   %body
-    .container
-      = yield
+    #header
+      .container
+        %h1= link_to "Crimson Crisp", "#"
+        %ul#nav
+          %li= link_to "Books", "#"
+        %ul#global
+          %li= link_to "Sign In", "#"
+
+    #application
+      .container
+        = yield
