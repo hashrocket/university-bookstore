@@ -18,4 +18,6 @@
 
     #application
       .container
+        %p.notice= flash[:notice] if flash[:notice]
+        %p.alert= flash[:alert] if flash[:alert]
         = yield
