@@ -1,0 +1,12 @@
+/config/database.yml
+/coverage
+/db/*.sqlite3
+/doc/api
+/doc/app
+/doc/plugins
+/log/*
+/public/system
+/.bundle
+.DS_Store
+*~
+.*.sw?
