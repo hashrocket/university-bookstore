@@ -1,5 +1,6 @@
 source :gemcutter
 
+gem 'decent_exposure', '0.2.3'
 gem 'devise', '1.0.7'
 gem 'factory_girl', '1.2.3'
 gem 'haml', '2.2.3'

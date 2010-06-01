@@ -4,6 +4,10 @@ dependencies:
     group: 
     - :test
     version: ">= 0"
+  decent_exposure: 
+    group: 
+    - :default
+    version: = 0.2.3
   rails: 
     group: 
     - :default
@@ -109,6 +113,8 @@ specs:
     version: 1.0.10
 - database_cleaner: 
     version: 0.5.0
+- decent_exposure: 
+    version: 0.2.3
 - warden: 
     version: 0.10.7
 - devise: 
@@ -145,7 +151,7 @@ specs:
     version: 0.2.4
 - sqlite3-ruby: 
     version: 1.2.5
-hash: 480c272566b2b65ea01bc3a42ef3b203827b2466
+hash: b7aebf83ed3f36ef5ed9b8f046ab874ca5840140
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
