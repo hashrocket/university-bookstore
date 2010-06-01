@@ -1,0 +1,207 @@
+/*
+----------------------------------------
+University Book Store
+     Author:    Dennis Eusebio
+---------------------------------------- */
+
+/* zeros out everything */
+@import "whitespace-reset.css";
+
+body {
+	background: ;
+	font: 12px/160% 'Helvetica', Arial, sans-serif;
+	color: ;
+}
+
+p { margin-bottom: 14px; }
+small { font-size: 11px; }
+
+/* links
+---------------------------------------- */
+a:link { color: #3366cc; }
+a:visited { color: #3366cc; }
+a:hover { color: #6699cc; }
+a:active { color: #3366cc; }
+
+/* headers
+---------------------------------------- */
+h1, h2, h3, h4 {
+  line-height: 140%;
+}
+h1 { font-size: 2.4em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: .8em; }
+
+
+/* universal
+---------------------------------------- */
+.container {
+  margin: 0 auto;
+  width: 940px;
+}
+
+#header {
+  padding: 10px 0;
+  float: left;
+  width: 100%;
+  background: #cc0000;
+}
+  #header a:link, #header a:visited, #header a:hover, #header a:active { color: #eee; }
+    #header a:hover { color: #fff; }
+  #header h1 {
+    margin-right: 20px;
+    float: left;
+    width: 220px;
+    display: inline;
+  }
+  ul#nav {
+    margin: 12px 20px 0 0;
+    float: left;
+    width: 460px;
+    display: inline;
+  }
+    ul#nav li { 
+      display: inline;
+      font-weight: bold;
+    }
+    ul#nav a:link, ul#nav a:visited, ul#nav a:hover, ul#nav a:active {
+      padding: 5px 10px;
+      background: #cc6666;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  ul#global {
+    margin-top: 12px;
+    float: right;
+    width: 220px;
+    text-align: right;
+  }
+    ul#global li {
+      display: inline;
+      font-weight: bold;
+    }
+
+#application {
+  margin: 40px 0;
+  float: left;
+  width: 100%;
+}
+
+/* forms */
+form dl, form dt, form dd { margin: 0; padding: 0; }
+form dl { margin-bottom: 10px; }
+form fieldset { border: none; }
+.action { margin-top: 10px; }
+
+form label { font-weight: bold; }
+.input_text {
+  padding: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+/* universal
+---------------------------------------- */
+/* books */
+#books {
+  margin: 20px 0;
+  float: left;
+  width: 940px;
+}
+  .book {
+    margin: 0 20px 20px 0;
+    float: left;
+    width: 220px;
+  }
+    .book.first { clear: both; }
+    .book.last { margin: 0; }
+    .book_preview {
+      float: left;
+      width: 40px;
+    }
+    .book_preview img{
+      width: 40px;
+      height: 60px;
+    }
+    .book_info {
+      float: right;
+      width: 160px;
+    }
+    .meta { color: #666; }
+    .price { font-weight: bold; }
+#book_detail {
+  float: left;
+  width: 940px;
+}
+  .book_gallery {
+    margin-right: 20px;
+    float: left;
+    width: 220px;
+    display: inline;
+  }
+  .book_details {
+    float: left;
+    width: 700px;
+    display: inline;
+  }
+  .buy { margin: 10px 0 20px 0; }
+    .buy a:link, .buy a:visited, .buy a:hover, .buy a:active {
+      padding: 5px 10px;
+      font-weight: bold;
+      color: #fff;
+      background: #3366cc;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  #book_admin {
+    float: right;
+    width: 700px;
+  }
+    .statistic {
+      padding: 10px 0;
+      float: left;
+      width: 700px;
+      border-bottom: 1px solid #ddd;
+    }
+      .statistic p { margin: 0; }
+      .count {
+        float: left;
+        width: 100px;
+      }
+        .count h1 { line-height: normal; }
+      .statistic_info {
+        float: right;
+        width: 580px;
+      }
+    form.add_tracking {
+      margin: 20px 0;
+      float: left;
+      width: 700px;
+    }
+      form.add_tracking fieldset {
+        padding: 20px;
+        background: #eee;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+
+/* sign in */
+form#sign_in { 
+  margin: 20px 0;
+  float: left;
+  width: 460px;
+}
+form#sign_in fieldset {
+  padding: 20px;
+  background: #eee;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+  #f_email, #f_password { width: 220px; }
+
+
