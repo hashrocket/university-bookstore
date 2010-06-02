@@ -1,0 +1,11 @@
+%h2 Sign In
+- form_for resource_name, resource, :url => session_path(resource_name), :html => { :id => 'sign_in' } do |f|
+  %fieldset
+    %dl
+      %dt= f.label :email, "Email Address:"
+      %dd= f.text_field :email, :class => 'input_text'
+    %dl
+      %dt= f.label :password
+      %dd= f.password_field :password, :class => 'input_text'
+    .action
+      = f.submit "Sign in"

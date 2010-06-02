@@ -10,14 +10,18 @@
   %body
     #header
       .container
-        %h1= link_to "Crimson Crisp", "#"
+        %h1= link_to "Crimson Crisp", root_path
         %ul#nav
-          %li= link_to "Books", "#"
+          %li= link_to "Books", books_path
         %ul#global
-          %li= link_to "Sign In", "#"
-
+          - if user_signed_in?
+            %li= link_to "Sign Out", destroy_user_session_path
+          - else
+            %li= link_to "Sign In", user_session_path
     #application
       .container
-        %p.notice= flash[:notice] if flash[:notice]
-        %p.alert= flash[:alert] if flash[:alert]
+        - if flash[:alert].present?
+          %p.alert= flash[:alert]
+        - if flash[:notice].present?
+          %p.notice= flash[:notice]
         = yield
