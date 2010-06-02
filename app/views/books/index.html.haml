@@ -1,0 +1,12 @@
+%h2 Our Books
+#books
+  - books.in_groups_of(4).each do |row|
+    - row.each_with_index do |book, index|
+      - if book.present?
+        .book{:class => book_column_class(index)}
+          .book_preview
+            = link_to(image_tag(book.image, :alt =>"#{book.title}"), book_path(book))
+          .book_info
+            %h3= link_to "#{book.title}", book_path(book)
+            %p.meta= book.author
+            %p.price= number_to_currency(book.price)
