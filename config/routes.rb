@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.devise_for :users
+
   map.resources :books
 
   map.root :controller => 'books'
