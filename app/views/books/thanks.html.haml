@@ -1,0 +1,12 @@
+%h1 Thank You for your Purchase!
+%p You&rsquo;ll be receiving the book below in 4 - 5 business days.
+%p
+#books
+  .book
+    .book_preview
+      = link_to(image_tag(book.image, :alt => book.title), book_path(book))
+    .book_info
+      %h3
+        = link_to book.title, book_path(book)
+      %p.meta= "by #{book.author}"
+      %p.price= number_to_currency(book.price)
