@@ -32,7 +32,7 @@ context "Customer viewing the book index page" do
     end
 
     it "sees a purchase link" do
-      page.should have_xpath("//*[@id='book_details']//a[@href='#']", :text => 'Purchase Book')
+      page.should have_xpath("//*[@id='book_details']//a", :text => 'Purchase Book')
     end
 
     it "does not see Ulysse" do

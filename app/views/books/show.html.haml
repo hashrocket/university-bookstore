@@ -7,7 +7,7 @@
     %p.meta= "by #{book.author}"
 
     %h2= number_to_currency(book.price)
-    .buy= link_to "Purchase Book", '#'
+    .buy= link_to "Purchase Book", thanks_book_path(book)
 
     %p= book.description
 
