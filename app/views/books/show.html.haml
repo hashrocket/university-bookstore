@@ -1,3 +1,4 @@
+%h1= affiliate_link.name if affiliate_link.present?
 #book_detail
   .book_gallery
     %img{:src=> book.image, :alt=> book.title}
@@ -9,3 +10,29 @@
     .buy= link_to "Purchase Book", '#'
 
     %p= book.description
+
+    - if user_signed_in?
+      #book_admin
+        %h2 Admin Tools
+        - book.affiliate_links.each do |link|
+          .statistic
+            .count
+              %h1= link.visits_count
+              %p Visits
+            .statistic_info
+              %h3= link.name
+              %p
+                Tracking URL:
+                = link_to book_url(book, :affiliate_id => link.id), book_url(book, :affiliate_id => link.id), :class => 'affiliate_link'
+
+        - form_for :affiliate_link, :url => { :action => 'create', :controller => 'affiliate_links' }, :html => { :class => 'add_tracking' } do |f|
+          %fieldset
+            %dl
+              %dt
+                = f.label :name, 'Affiliate Link'
+              %dd
+                = f.text_field :name, :id => 'f_affiliate_link'
+              = f.hidden_field :book_id, :value => book.id
+            #action
+              = f.submit "Add Affiliate Link"
+

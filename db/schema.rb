@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100601225925) do
+ActiveRecord::Schema.define(:version => 20100602182005) do
+
+  create_table "affiliate_links", :force => true do |t|
+    t.string   "name"
+    t.integer  "visits_count", :default => 0
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "books", :force => true do |t|
     t.string   "title"
