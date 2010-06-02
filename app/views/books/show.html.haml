@@ -1,0 +1,11 @@
+#book_detail
+  .book_gallery
+    %img{:src=> book.image, :alt=> book.title}
+  #book_details
+    %h1= book.title
+    %p.meta= "by #{book.author}"
+
+    %h2= number_to_currency(book.price)
+    .buy= link_to "Purchase Book", '#'
+
+    %p= book.description

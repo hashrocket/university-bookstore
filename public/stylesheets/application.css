@@ -141,6 +141,11 @@ form label { font-weight: bold; }
     width: 220px;
     display: inline;
   }
+  .book_gallery img {
+    width: 220px;
+    height: 273px;
+  }
+
   .book_details {
     float: left;
     width: 700px;
