@@ -49,8 +49,13 @@ describe "User who has signed in and opened a book details page" do
   context "when affiliate link has been clicked" do
     it "has a count greater than zero" do
       visit book_path(book, :affiliate_id => affiliate_link.id)
+      page.should have_xpath("//*[@class='count']/h1", :text => /^[1-9]{1}[0-9]*$/)
+    end
+
+    it "the visit count is incremented by one" do
+      affiliate_link.visits_count.should == 42
       visit book_path(book, :affiliate_id => affiliate_link.id)
-      page.should have_xpath("//*[@class='count']/h1", :text => '2')
+      page.should have_xpath("//*[@class='count']/h1", :text => '43')
     end
   end
 
