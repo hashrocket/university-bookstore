@@ -5,53 +5,24 @@ namespace :example do
     sh 'git tag -n1'
   end
 
-  desc "Generate the rails application using terrarails gem"
-  task :"1" do
-    sh 'git checkout example_1'
-    sh 'rake db:drop db:create db:migrate db:seed'
-    sh 'git checkout .'
-  end
+  tasks = {
+    1 => "Generate the rails application using terrarails gem",
+    2 => "Customer views",
+    3 => "Customer views books index page",
+    4 => "Customer views book details page",
+    5 => "User signs in",
+    6 => "User creates an affiliate link for a book",
+    7 => "System counts visits to affiliate link",
+    8 => "Customer purchases a book",
+  }
 
-  desc "Customer views books index page"
-  task :"2" do
-    sh 'git checkout example_2'
-    sh 'rake db:drop db:create db:migrate db:seed'
-    sh 'git checkout .'
-  end
-
-  desc "Customer views book details page"
-  task :"3" do
-    sh 'git checkout example_3'
-    sh 'rake db:drop db:create db:migrate db:seed'
-    sh 'git checkout .'
-  end
-
-  desc "User signs in"
-  task :"4" do
-    sh 'git checkout example_4'
-    sh 'rake db:drop db:create db:migrate db:seed'
-    sh 'git checkout .'
-  end
-
-  desc "User creates an affiliate link for a book"
-  task :"5" do
-    sh 'git checkout example_5'
-    sh 'rake db:drop db:create db:migrate db:seed'
-    sh 'git checkout .'
-  end
-
-  desc "System counts visits to affiliate link"
-  task :"6" do
-    sh 'git checkout example_6'
-    sh 'rake db:drop db:create db:migrate db:seed'
-    sh 'git checkout .'
-  end
-
-  desc "Customer purchases a book"
-  task :"7" do
-    sh 'git checkout example_7'
-    sh 'rake db:drop db:create db:migrate db:seed'
-    sh 'git checkout .'
+  tasks.each do |number, description|
+    desc description
+    task :"#{number}" do
+      sh "git checkout example_#{number}"
+      sh 'rake db:drop db:create db:migrate db:seed'
+      sh 'git checkout .'
+    end
   end
 
 end
